@@ -60,9 +60,7 @@
   <a class="resume-link" href="resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
 </div>
 
-<div id="subtle-root" class="variation-root active" data-screen-label="Subtle"></div>
-<div id="kinetic-root" class="variation-root" data-screen-label="Kinetic"></div>
-<div id="playful-root" class="variation-root" data-screen-label="Playful"></div>
+<div id="kinetic-root" class="variation-root active" data-screen-label="Kinetic"></div>
 
 <!-- Tweaks panel (hidden until activated) -->
 <div class="tweaks-panel" id="tweaks-panel">
@@ -70,14 +68,6 @@
   <div class="tweak-row">
     <label>Accent hue</label>
     <div class="hue-swatches" id="hue-swatches"></div>
-  </div>
-  <div class="tweak-row">
-    <label>Start variation</label>
-    <select id="tweak-default-variation" class="tweak-toggle">
-      <option value="subtle">Subtle</option>
-      <option value="kinetic">Kinetic</option>
-      <option value="playful">Playful</option>
-    </select>
   </div>
 </div>
 
@@ -91,52 +81,17 @@
 
 <script>
   const TWEAKS = /*EDITMODE-BEGIN*/{
-    "accentHue": 35,
-    "defaultVariation": "kinetic"
+    "accentHue": 35
   }/*EDITMODE-END*/;
 
   // Apply accent hue
   document.documentElement.style.setProperty('--accent-h', TWEAKS.accentHue);
 
-  // Variation switching
-  const LS_KEY = 'sagar-portfolio-variation';
-  const roots = {
-    subtle: document.getElementById('subtle-root'),
-    kinetic: document.getElementById('kinetic-root'),
-    playful: document.getElementById('playful-root'),
-  };
-  const mounted = { subtle: false, kinetic: false, playful: false };
-
-  function mount(v) {
-    if (mounted[v]) return;
-    mounted[v] = true;
-    const Component = v === 'subtle' ? window.SubtleVariation
-      : v === 'kinetic' ? window.KineticVariation
-      : window.PlayfulVariation;
-    if (!Component) { mounted[v] = false; return; }
-    ReactDOM.createRoot(roots[v]).render(React.createElement(Component));
-  }
-
-  function setVariation(v, persist = true) {
-    Object.keys(roots).forEach(k => roots[k].classList.toggle('active', k === v));
-    document.querySelectorAll('#variation-bar button').forEach(b => {
-      b.classList.toggle('active', b.dataset.v === v);
-    });
-    mount(v);
-    if (persist) localStorage.setItem(LS_KEY, v);
-    window.scrollTo(0, 0);
-  }
-
-  document.querySelectorAll('#variation-bar button').forEach(b => {
-    b.addEventListener('click', () => setVariation(b.dataset.v));
-  });
-
   // Wait for babel to transpile before first mount
   function boot() {
-    if (!window.SubtleVariation) { setTimeout(boot, 50); return; }
-    // Default to kinetic unless user has explicitly switched
-    const saved = localStorage.getItem(LS_KEY) || TWEAKS.defaultVariation || 'kinetic';
-    setVariation(saved, false);
+    if (!window.KineticVariation) { setTimeout(boot, 50); return; }
+    const root = document.getElementById('kinetic-root');
+    ReactDOM.createRoot(root).render(React.createElement(window.KineticVariation));
   }
   boot();
 
@@ -163,12 +118,6 @@
       window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { accentHue: Number(h) } }, '*');
     });
     swatchWrap.appendChild(s);
-  });
-
-  const varSel = document.getElementById('tweak-default-variation');
-  varSel.value = TWEAKS.defaultVariation || 'subtle';
-  varSel.addEventListener('change', () => {
-    window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { defaultVariation: varSel.value } }, '*');
   });
 
   window.addEventListener('message', (e) => {
