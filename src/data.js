@@ -23,12 +23,12 @@ window.PORTFOLIO = {
   ],
 
   metrics: [
-    { value: "~99%", label: "Uptime sustained", sub: "7 mission-critical clinical trial apps · 7 consecutive years" },
-    { value: "8+", label: "Apps owned", sub: "Within a GxP & SOX-regulated portfolio at Cognizant" },
-    { value: "8–10", label: "Engineers led", sub: "across application teams (2–4 per app)" },
-    { value: "0", label: "Major critical findings", sub: "across GxP, SOX, FDA 21 CFR Part 11 & HIPAA audits" },
-    { value: "2", label: "AWS migrations", sub: "Led from the operations side as application owner" },
-    { value: "TFS → Bitbucket", label: "CI/CD modernization", sub: "end-to-end repo & pipeline migration" },
+    { value: "AI · Internal GPT · RAG", label: "AI Practitioner", sub: "Built RAG-based Custom GPT for clinical IT ops — query resolution, report prep & issue triage from trained internal data" },
+    { value: "8+", label: "Apps Owned", sub: "Web, SaaS, GxP, Non-GxP & SOX-regulated apps — clinical trials to enterprise tools" },
+    { value: "10–12", label: "Engineers Led", sub: "Cross-functional delivery & ops teams across application portfolio" },
+    { value: "~99%", label: "Application Uptime", sub: "Zero major SLA breaches · clean across GxP & SOX compliance audits" },
+    { value: "5+", label: "Infrastructure Migrations", sub: "App server & database migrations across portfolio roadmap · including 2 AWS cloud migrations" },
+    { value: "CI/CD", label: "TFS → Bitbucket", sub: "End-to-end repo & pipeline modernization" },
   ],
 
   projects: [
