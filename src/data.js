@@ -23,7 +23,7 @@ window.PORTFOLIO = {
   ],
 
   metrics: [
-    { value: "AI · Internal GPT · RAG", label: "AI Practitioner", sub: "Built RAG-based Custom GPT for clinical IT ops — query resolution, report prep & issue triage from trained internal data" },
+    { value: "AI Practitioner", label: "AI · Internal GPT · RAG", sub: "Built RAG-based Custom GPT for clinical IT ops — query resolution, report prep & issue triage from trained internal data" },
     { value: "8+", label: "Apps Owned", sub: "Web, SaaS, GxP, Non-GxP & SOX-regulated apps — clinical trials to enterprise tools" },
     { value: "10–12", label: "Engineers Led", sub: "Cross-functional delivery & ops teams across application portfolio" },
     { value: "~99%", label: "Application Uptime", sub: "Zero major SLA breaches · clean across GxP & SOX compliance audits" },

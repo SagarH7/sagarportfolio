@@ -280,11 +280,11 @@ function KineticMetrics() {
         {d.metrics.map((m, i) =>
         <Reveal key={i} delay={i * 0.06}>
             <div style={{ padding: "28px 24px", background: "var(--bg)", height: "100%" }}>
-              <div style={{ fontFamily: "var(--serif)", fontSize: "clamp(36px, 4vw, 56px)", lineHeight: 1.1, letterSpacing: "-0.03em", color: "var(--ink)", marginBottom: 12, minHeight: "auto" }}>
+              <div style={{ fontFamily: "var(--serif)", fontSize: "clamp(28px, 3vw, 44px)", lineHeight: 1.1, letterSpacing: "-0.03em", color: "var(--ink)", marginBottom: 12, minHeight: "auto" }}>
                 <CountUp value={m.value} />
               </div>
-              <div style={{ fontWeight: 500, fontSize: 14, marginBottom: 4 }}>{m.label}</div>
-              <div style={{ fontSize: 12, color: "var(--ink-3)" }}>{m.sub}</div>
+              <div style={{ fontWeight: 600, fontSize: 15, marginBottom: 6 }}>{m.label}</div>
+              <div style={{ fontSize: 13, color: "var(--ink-3)", lineHeight: 1.5 }}>{m.sub}</div>
             </div>
           </Reveal>
         )}
