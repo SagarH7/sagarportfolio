@@ -9,7 +9,7 @@ window.PORTFOLIO = {
     "Application Delivery Manager",
     "Life Sciences AI & Clinical Systems",
   ],
-  tagline: "Program rigor, regulatory expertise, and emerging AI — meeting in the same role.",
+  tagline: "Program rigor · ITIL operations (SR · INC · CR) · regulatory expertise · emerging AI — one complete delivery role.",
   location: "Hyderabad, India",
   email: "sagarharemanik@outlook.com",
   phone: "+91 78422 92789",
@@ -18,7 +18,7 @@ window.PORTFOLIO = {
 
   about: [
     "I'm a Technical Program & Delivery Manager with 11+ years leading validated clinical and life-sciences applications, AI initiatives, and cross-functional programs for global pharma clients including Novartis.",
-    "Currently at Cognizant, managing multiple regulated applications — directing 8–10 engineers across teams, owning full SDLC under Agile and ITIL, and partnering with senior stakeholders on roadmap, delivery, and operations.",
+    "Currently at Cognizant as Application Manager for 8+ GxP and SOX-regulated applications — directing 10–12 engineers, running end-to-end ITIL operations (Incident · Change · Service Request) via ServiceNow, and partnering with senior stakeholders on roadmap, compliance, and delivery.",
     "Looking for leadership roles as Technical Program Manager, Delivery Manager, or AI Application Manager — where program rigor, regulatory expertise, and emerging AI capability intersect to deliver measurable impact.",
   ],
 
